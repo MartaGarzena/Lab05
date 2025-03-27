@@ -1,3 +1,7 @@
+from database import corso_DAO
+from database import studente_DAO
+
 class Model:
-    def __init__(self):
-        pass
+    def get_corsi(self):
+        return corso_DAO.getAllCorsi()
+

@@ -1,5 +1,6 @@
 import flet as ft
 
+from database import corso_DAO
 from model.model import Model
 from UI.view import View
 from UI.controller import Controller
