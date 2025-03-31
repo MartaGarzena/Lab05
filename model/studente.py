@@ -8,7 +8,14 @@ class Studente:
     CDS: str
 
     def __str__(self):
-        return f"{self.matricola} {self.cognome} {self.nome}"
+        return f" {self.cognome}, {self.nome} {self.matricola}"
 
     def __eq__(self, other):
         return self.matricola == other.matricola
+
+    def getMatricola(self):
+        return self.matricola
+    def getNome(self):
+        return self.nome
+    def getCognome(self):
+        return self.cognome

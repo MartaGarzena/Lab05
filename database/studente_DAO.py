@@ -1,6 +1,7 @@
 # Add whatever it is needed to interface with the DB Table studente
 
 from database.DB_connect import get_connection
+from model.corso import Corso
 
 from model.studente import Studente
 from database.DB_connect import get_connection, DBConnect
@@ -20,6 +21,7 @@ def getAllStudents():
     cnx.close()
     return res
 
+
 if __name__ == '__main__':
-    for e in getAllStudents():
-        print(e, isinstance(e, Studente))
+    for e in getCorsiDelloStudent("190635"):
+        print(e, isinstance(e, Corso))

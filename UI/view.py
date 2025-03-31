@@ -27,7 +27,7 @@ class View(ft.UserControl):
         self._title = ft.Text("App Gestione Studenti", color="blue", size=24)
         self._page.controls.append(self._title)
 
-        self.dd_menu = ft.Dropdown(label="corso", options=[] )
+        self.dd_menu = ft.Dropdown(label="corso", options=[], width=300)
         self._controller.popolaDrop()
         #ROW with some controls
         # text field for the name
@@ -37,16 +37,15 @@ class View(ft.UserControl):
 
         self._btn_Studente = ft.ElevatedButton(text="Cerca studente", width=200,
                                                on_click=self._controller.handle_studente)
-        self._btn_COrsi = ft.ElevatedButton(text="Cerca corsi", width=200, on_click=self._controller.handle_matricola)
+        self._btn_Corsi = ft.ElevatedButton(text="Cerca corsi", width=200, on_click=self._controller.handle_matricola)
         self._btn_Iscrivi = ft.ElevatedButton(text="Iscriviti", width=200, on_click=self._controller.handle_iscrivi)
 
-        # button for the "hello" reply
-        self.btn_Iscritti = ft.ElevatedButton(text="Cerca iscritti", on_click=self._controller.handle_iscritti)
+        self.btn_Iscritti = ft.ElevatedButton(text="Cerca iscritti", on_click=self._controller.handle_cercaIscritti)
 
         row1 = ft.Row([self.dd_menu, self.btn_Iscritti], alignment=ft.MainAxisAlignment.CENTER)
         #row2
         row3 = ft.Row([self.txt_matricola, self.txt_name, self.txt_cognome], alignment=ft.MainAxisAlignment.CENTER)
-        row4 = ft.Row([self._btn_Studente, self._btn_COrsi, self._btn_Iscrivi], alignment=ft.MainAxisAlignment.CENTER)
+        row4 = ft.Row([self._btn_Studente, self._btn_Corsi, self._btn_Iscrivi], alignment=ft.MainAxisAlignment.CENTER)
         # List View where the reply is printed
         self.txt_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
         self._page.add(row1, row3, row4)
